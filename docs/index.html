@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbjudningskort</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" href="/css/styles.css">
+</head>
+<body>
+<div class="card">
+    <h1 style="font-size: 40px; line-height: 1.5;"><i>Välkommen till Leahs 1-årsdag!</i></h1><br>
+    <img th:src="@{/images/leah.jpg}" alt="Festbild" class="card-img">
+    <div class="card-content">
+        <div class="card-info" style="font-size: 18px; line-height: 1.5;">
+            <h3><b>Plats:</b> Inre kustvägen 43, Båstad</h3>
+            <h3><b>Datum:</b> 13/6 - 2024</h3>
+            <h3><b>Tid:</b> 15:00</h3>
+        </div>
+        <p style="font-size: 18px; line-height: 1.5;">
+            Vi bjuder in dig till ett 1-årsfirande fyllt med glädje,
+            skratt och massor av godsaker!
+            Tillsammans ska vi skapa oförglömliga minnen och fira för ett år fyllt med kärlek och glädje.
+            <br>
+            <i>Vi ser fram emot att ha dig med oss när vi firar vår Leahs första år i livet!</i></p>
+        <button class="button" id="rsvpButton">OSA här</button>
+    </div>
+    <div id="myModal" class="modal" th:if="${showModal}">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>OSA</h2>
+            <form th:action="@{/rsvp}" method="post" id="rsvpForm">
+                <label for="name">Namn:</label>
+                <input type="text" id="name" name="name" required><br>
+                <label for="guests">Antal gäster:</label>
+                <input type="number" id="guests" name="guests" min="1" required><br>
+                <label for="allergies">Allergier:</label>
+                <textarea id="allergies" name="allergies"></textarea><br>
+                <button type="submit" class="button">Skicka</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script th:src="@{/js/script.js}" defer></script>
+</body>
+</html>
+

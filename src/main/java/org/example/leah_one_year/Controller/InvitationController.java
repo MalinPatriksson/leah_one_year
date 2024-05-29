@@ -24,7 +24,7 @@ public class InvitationController {
         model.addAttribute("rsvpButtonId", "rsvpButton");
         model.addAttribute("rsvpButtonText", "OSA här");
         model.addAttribute("showModal", true);
-        return "inviteCard";
+        return "index";
     }
 
     @PostMapping("/rsvp")

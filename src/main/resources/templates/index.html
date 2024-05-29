@@ -168,7 +168,7 @@
 <body>
 <div class="card">
     <h1 style="font-size: 40px; line-height: 1.5;"><i>Välkommen till Leahs 1-årsdag!</i></h1><br>
-    <img th:src="@{docs/images/leah.jpg}" alt="Festbild" class="card-img">
+    <img th:src="@{/images/leah.jpg}" alt="Festbild" class="card-img">
     <div class="card-content">
         <div class="card-info" style="font-size: 18px; line-height: 1.5;">
             <h3><b>Plats:</b> Inre kustvägen 43, Båstad</h3>
@@ -194,7 +194,7 @@
                 <input type="number" id="guests" name="guests" min="1" required><br>
                 <label for="allergies">Allergier:</label>
                 <textarea id="allergies" name="allergies"></textarea><br>
-                <button type="submit" class="button">Skicka</button>
+                <button type="submit" class="button" id="submitBtn">Skicka</button>
             </form>
         </div>
     </div>
@@ -202,40 +202,46 @@
 <script>
     // Vänta tills hela sidan har laddats innan JavaScript-koden körs
     document.addEventListener("DOMContentLoaded", function() {
-// Hämta knappen med id "rsvpButton"
+        // Hämta knappen med id "rsvpButton"
         var rsvpButton = document.getElementById("rsvpButton");
 
-// Lägg till en händelselyssnare för klickhändelse på knappen
+        // Lägg till en händelselyssnare för klickhändelse på knappen
         rsvpButton.addEventListener("click", function() {
-// Hämta modalen med id "myModal"
+            // Hämta modalen med id "myModal"
             var modal = document.getElementById("myModal");
 
-// Visa modalen genom att ändra dess display-attribut till "block"
+            // Visa modalen genom att ändra dess display-attribut till "block"
             modal.style.display = "block";
         });
 
-// Hämta stängknappen med klass "close"
+        // Hämta stängknappen med klass "close"
         var closeButton = document.querySelector(".close");
 
-// Lägg till en händelselyssnare för klickhändelse på stängknappen
+        // Lägg till en händelselyssnare för klickhändelse på stängknappen
         closeButton.addEventListener("click", function() {
-// Hämta modalen med id "myModal"
+            // Hämta modalen med id "myModal"
             var modal = document.getElementById("myModal");
 
-// Dölj modalen genom att ändra dess display-attribut till "none"
+            // Dölj modalen genom att ändra dess display-attribut till "none"
             modal.style.display = "none";
         });
 
-// Lägg till en händelselyssnare för klickhändelse på fönstret
+        // Lägg till en händelselyssnare för klickhändelse på fönstret
         window.addEventListener("click", function(event) {
-// Hämta modalen med id "myModal"
+            // Hämta modalen med id "myModal"
             var modal = document.getElementById("myModal");
 
-// Kontrollera om användaren klickade utanför modalens innehåll
+            // Kontrollera om användaren klickade utanför modalens innehåll
             if (event.target === modal) {
-// Dölj modalen genom att ändra dess display-attribut till "none"
+                // Dölj modalen genom att ändra dess display-attribut till "none"
                 modal.style.display = "none";
             }
+        });
+
+        // Lägg till en händelselyssnare för klickhändelse på knappen "Skicka"
+        document.getElementById("submitBtn").addEventListener("click", function() {
+            // Skicka användaren till sidan "/rsvp" när de trycker på knappen "Skicka"
+            window.location.href = "/rsvp";
         });
     });
 </script>

@@ -18,16 +18,5 @@ public class RsvpRequestService {
     public void saveRsvp(RsvpRequest rsvp) {
         rsvpRepository.save(rsvp);
     }
-
-    public Iterable<RsvpRequest> getAllRsvps() {
-        return rsvpRepository.findAll();
-    }
-
-    public void processRsvp(RsvpRequest rsvp) {
-        sendConfirmationEmail(rsvp);
-    }
-
-    private void sendConfirmationEmail(RsvpRequest rsvp) {
-    }
 }
 

@@ -4,12 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inbjudningskort</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" href="/css/styles.css">
 </head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url("docs/css/images/balong.jfif");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 20px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 110vh;
+    }
+
+    .card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        overflow: hidden;
+        width: auto;
+        height: auto;
+        margin: 20px;
+        border: 4px solid rgba(225, 158, 224, 0.57);
+        max-width: 600px;
+    }
+
+    .card-img {
+        width: 80%;
+        height: auto;
+        display: block;
+        margin: 10px auto;
+        border: 4px solid rgba(225, 158, 224, 0.57);
+        border-radius: 10px;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    h1 {
+        color: #333;
+        margin: 20px;
+        text-align: center;
+    }
+    h3 {
+        margin: 20px;
+        font-weight: normal;
+    }
+
+    p {
+        color: #666;
+        margin: 20px;
+        text-align: center;
+    }
+</style>
 <body>
 <div class="card">
     <h1 style="font-size: 40px; line-height: 1.5;">&hearts;&hearts;&hearts;</h1><br>
-    <img th:src="@{/images/leah2.jpg}" alt="Festbild" class="card-img">
+    <img th:src="@{docs/images/leah2.jpg}" alt="Festbild" class="card-img">
     <div class="card-content">
         <p style="font-size: 40px; line-height: 1.5;">
             Yeey! <br> Välkommen hem till mig!!
